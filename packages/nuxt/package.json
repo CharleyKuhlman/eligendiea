@@ -1,0 +1,67 @@
+{
+	"name": "@vue-dapp/nuxt",
+	"version": "1.0.0",
+	"description": "Vue Dapp Nuxt module",
+	"repository": "your-org/@vue-dapp/nuxt",
+	"bugs": {
+		"url": "https://github.com/vu3th/vue-dapp/issues"
+	},
+	"packageManager": "^pnpm@8.6.9",
+	"homepage": "https://github.com/vu3th/vue-dapp",
+	"author": "Johnson Chen <https://twitter.com/chnejohnson>",
+	"license": "MIT",
+	"keywords": [
+		"vue",
+		"nuxt",
+		"dapp",
+		"web3",
+		"ethereum",
+		"crypto",
+		"wallet",
+		"module"
+	],
+	"files": [
+		"dist"
+	],
+	"main": "./dist/module.cjs",
+	"module": "./dist/module.mjs",
+	"types": "./dist/types.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/types.d.ts",
+			"import": "./dist/module.mjs",
+			"require": "./dist/module.cjs"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "nuxt prepare && nuxt-module-build build",
+		"dev": "nuxi dev playground",
+		"dev:build": "nuxi build playground",
+		"release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+		"lint": "eslint .",
+		"test": "vitest run",
+		"test:watch": "vitest watch"
+	},
+	"dependencies": {
+		"@nuxt/kit": "^3.9.0"
+	},
+	"devDependencies": {
+		"@nuxt/devtools": "latest",
+		"@nuxt/eslint-config": "^0.2.0",
+		"@nuxt/module-builder": "^0.5.5",
+		"@nuxt/schema": "^3.9.0",
+		"@nuxt/test-utils": "^3.11.0",
+		"@types/node": "^20.10.6",
+		"changelogen": "^0.5.5",
+		"eslint": "^8.56.0",
+		"typescript": "^5.3.3",
+		"vitest": "^1.2.2"
+	},
+	"peerDependencies": {
+		"@vue-dapp/core": "*"
+	},
+	"gitHead": "25de462d7b98ca0fe3d60030a45a827f27d60e48"
+}
